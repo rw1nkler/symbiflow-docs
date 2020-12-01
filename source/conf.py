@@ -314,6 +314,23 @@ rst_prolog = """
    :format: html
 """
 
+def print_stats():
+    def run_cmd(cmd):
+        import subprocess
+        print("--------------------------------------------------------------")
+        print("CMD: ", cmd)
+        subprocess.check_call("cmd", stdout=sys.stdout, stderr=sys.stderr, shell=True)
+        print("--------------------------------------------------------------")
+
+    run_cmd("which conda")
+    run_cmd("which python3")
+    run_cmd("which pip")
+    run_cmd("which pip3")
+    run_cmd("conda list")
+    run_cmd("pip list")
+
+print_stats()
+
 ### BREATHE ###
 
 from pathlib import Path
