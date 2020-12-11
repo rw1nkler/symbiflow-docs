@@ -21,6 +21,7 @@ import sys, os
 needs_sphinx = '3.0.4'
 
 # For VTR documentation support
+sys.path.append(os.path.abspath('./_exts'))
 sys.path.append(os.path.abspath('./vtr-verilog-to-routing/doc/_exts'))
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
@@ -37,7 +38,8 @@ extensions = [
     'archdomain',
     'rrgraphdomain',
     'recommonmark',
-    'sphinx_verilog_domain'
+    'sphinx_verilog_domain',
+    'env'
 ]
 
 numfig = True
